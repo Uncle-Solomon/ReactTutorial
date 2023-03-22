@@ -7,8 +7,9 @@ import Cards from "./components/Cards";
 import Footer from "./components/Footer";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
   return (
-    <div>
+    <div className={darkMode ? "dark" : ""}>
       <Navbar />
       <Hero />
       <Analytics />
