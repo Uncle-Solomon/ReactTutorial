@@ -1,4 +1,5 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   return (
@@ -12,7 +13,21 @@ const Hero = () => {
         </h1>
         <div className="flex justify-center items-center">
           <p className="md:text-5xl sm:text-4xl text-xl font-bold">
-            Fast, flexible financing for
+            Fast, flexible financing for{" "}
+            <TypeAnimation
+              sequence={[
+                // Same String at the start will only be typed once, initially
+                "BTB",
+                1000,
+                "SASS",
+                1000,
+                "ABC",
+                1000,
+              ]}
+              className="md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2"
+              speed={35}
+              repeat={Infinity}
+            />
           </p>
         </div>
         <p className="md:text-2xl text-xl font-bold text-gray-500">
