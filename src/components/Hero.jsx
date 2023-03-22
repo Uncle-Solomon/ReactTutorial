@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
-  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <div className="text-white dark:bg-white">
         <div className="max-w-[800px] mt-[-96px] w-full h-screen text-center mx-auto flex flex-col justify-center">
           <p className="text-[#00df9a] font-bold p-2">

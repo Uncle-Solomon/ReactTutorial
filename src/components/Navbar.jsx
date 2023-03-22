@@ -2,22 +2,15 @@ import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
-  const [toggle, setToggle] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleToggle = () => {
-    setToggle(!toggle);
-    setDarkMode(!darkMode);
-  };
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <div className="text-white dark:text-black dark:bg-[#ffffff] flex items-center h-24 max-w-[1240px] mx-auto px-4 justify-between">
+    <div className={props.darkMode ? "dark" : ""}>
+      <div className="text-white dark:text-black dark:bg-[#ffffff] flex items-center h-24 max-w-[1240px] mt-[-1rem] mx-auto px-4 justify-between">
         <h1 className=" w-full text-3xl font-bold text-[#00df9a]">DAMN.</h1>
         <ul className="hidden md:flex">
           <li className="p-4">Home</li>
@@ -26,8 +19,8 @@ const Navbar = () => {
           <li className="p-4">About</li>
           <li className="p-4">Contact</li>
         </ul>
-        <div className="flex cursor-pointer" onClick={handleToggle}>
-          {toggle ? (
+        <div className="flex cursor-pointer" onClick={props.toggleDarkMode}>
+          {props.darkMode ? (
             <div className="flex cursor-pointer">
               DarkMode <FaToggleOff size={20} className="ml-2 mr-4 mt-0.5" />
             </div>
